@@ -6,21 +6,21 @@ import { FaInstagram } from "react-icons/fa";
 import { FaRegCopyright } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
 import { FaAndroid } from "react-icons/fa";
+import { IoIosArrowUp } from "react-icons/io";
 
 function Footer() {
+  const [openApp, setopenApp] = useState(false);
+  const [openRes, setopenRes] = useState(false);
 
-    const [open, setopen] = useState(false)
-    const [openn, setopenn] = useState(false)
+  const toggleApps = () => {
+    setopenApp((prev) => !prev);
+    setopenRes(false);
+  };
 
-    const toggleApps = () => {
-        setopen(!open)
-        setopenn(false)
-    }
-
-    const toggleResources = () => {
-        setopenn(!openn)
-        setopen(false)
-    }
+  const toggleResources = () => {
+    setopenRes((prev) => !prev);
+    setopenApp(false);
+  };
 
   return (
     <div className="mx-3 my-7">
@@ -29,46 +29,62 @@ function Footer() {
         <p>Help Center</p>
 
         <div className="relative cursor-pointer" onClick={toggleApps}>
-          <p className="hover:text-gray-600">Apps</p>
-          <div className={`absolute font-medium bg-white px-3 py-2.5 -top-32 -left-8 rounded-3xl shadow-2xl border-gray-200 border ${open ? "block" : "hidden"}`}>
+          <div className="flex items-center gap-1">
+            <p className="hover:text-gray-600">Apps</p>
+            <IoIosArrowUp color="#717171" className={`transition-transform duration-300 ${openApp ? "rotate-180" : "rotate-0"}`}/>
+          </div>
+          <div
+            className={`absolute font-medium bg-white px-3 py-2.5 -top-32 -left-8 rounded-3xl shadow-2xl border-gray-200 border ${
+              openApp ? "block" : "hidden"
+            }`}
+          >
             <div className="flex justify-start items-center gap-1.5 px-5 py-2 rounded-2xl hover:bg-gray-200 ">
-                <FaApple size={25}/>
-                <li className="text-[18px]">iOS</li>
+              <FaApple size={25} />
+              <p className="text-[18px]">iOS</p>
             </div>
             <div className="flex justify-start items-center gap-1.5 px-5 py-2 rounded-2xl hover:bg-gray-200 ">
-                <FaAndroid size={25}/>
-                <li className="text-[18px]">Android</li>
+              <FaAndroid size={25} />
+              <p className="text-[18px]">Android</p>
             </div>
           </div>
         </div>
 
-        <div className="relative cursor-pointer w-37" onClick={toggleResources}>
-          <p className="hover:text-gray-600">Resources</p>
-          <div className={`absolute font-medium bg-white px-3 py-2.5 -top-86 -left-24 rounded-3xl shadow-2xl border-gray-200 border ${openn ? "block" : "hidden"}`}>
+        <div
+          className="relative cursor-pointer w-fit"
+          onClick={toggleResources}
+        >
+          <div className="flex items-center gap-1">
+            <p className="hover:text-gray-600">Resources</p>
+            <IoIosArrowUp color="#717171" className={`transition-transform duration-300 ${openRes ? "rotate-180" : "rotate-0"}`}/>
+          </div>
+          <div
+            className={`absolute font-medium bg-white px-3 py-2.5 -top-86 w-60 -left-40 rounded-3xl shadow-2xl border-gray-200 border ${
+              openRes ? "block" : "hidden"
+            }`}
+          >
             <div className="flex justify-start items-center gap-1.5 px-5 py-2 rounded-2xl hover:bg-gray-200 ">
-                <p className="text-[18px]">Feature Request</p>
+              <p className="text-[18px]">Feature Request</p>
             </div>
             <div className="flex justify-start items-center gap-1.5 px-5 py-2 rounded-2xl hover:bg-gray-200 ">
-                <p className="text-[18px]">Buttons</p>
+              <p className="text-[18px]">Buttons</p>
             </div>
             <div className="flex justify-start items-center gap-1.5 px-5 py-2 rounded-2xl hover:bg-gray-200 ">
-                <p className="text-[18px]">QR Code</p>
+              <p className="text-[18px]">QR Code</p>
             </div>
             <div className="flex justify-start items-center gap-1.5 px-5 py-2 rounded-2xl hover:bg-gray-200 ">
-                <p className="text-[18px]">Stream Alerts</p>
+              <p className="text-[18px]">Stream Alerts</p>
             </div>
             <div className="flex justify-start items-center gap-1.5 px-5 py-2 rounded-2xl hover:bg-gray-200 ">
-                <p className="text-[18px]">ko-Fi Comparision</p>
+              <p className="text-[18px]">ko-Fi Comparision</p>
             </div>
             <div className="flex justify-start items-center gap-1.5 px-5 py-2 rounded-2xl hover:bg-gray-200 ">
-                <p className="text-[18px]">Patreon Comparision</p>
+              <p className="text-[18px]">Patreon Comparision</p>
             </div>
             <div className="flex justify-start items-center gap-1.5 px-5 py-2 rounded-2xl hover:bg-gray-200 ">
-                <p className="text-[18px]">Security Policies</p>
+              <p className="text-[18px]">Security Policies</p>
             </div>
           </div>
         </div>
-
       </div>
       <div className="flex justify-center gap-6 mt-5">
         <FaXTwitter size={25} />

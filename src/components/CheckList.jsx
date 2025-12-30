@@ -3,7 +3,7 @@ import { FaRegCheckCircle } from "react-icons/fa";
 
 function CheckList() {
   return (
-    <div className='my-12 flex justify-center items-start flex-col mx-4'>
+    <div className='my-12 flex justify-center items-start flex-col mx-7'>
         <p className='font-bold text-3xl '>Designed for creators, <br /><span className='text-[#717171]'>not for businesses.</span></p>
         <div className='mt-7 flex items-start w-full gap-4'>
                 <div>

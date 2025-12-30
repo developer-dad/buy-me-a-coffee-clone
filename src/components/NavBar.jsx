@@ -5,7 +5,7 @@ import logo from '../assets/logo.png'
 function NavBar() {
   return (
     // <div className='bg-white h-16 flex items-center justify-center'>!! NEVBAR COMMING SOON !!</div>
-    <div className='h-16 bg-white flex justify-between items-center mx-2.5'>
+    <div className='h-16 bg-white flex justify-between items-center px-2.5'>
       {/* left */}
       <div className='flex items-center gap-1.5'>
         {/* hamburger */}

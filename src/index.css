@@ -3,3 +3,10 @@
 html, body{
     background: #FAF8F0;
 }
+
+@media (min-width: 768px) {
+    body{
+        filter: blur(20px);
+        pointer-events: none;
+    }
+}
