@@ -30,7 +30,7 @@ function NavBar() {
 
         {/* right */}
         <div className="flex items-center gap-2">
-          <button className="hidden md:block">Log in</button>
+          <button>Log in</button>
           <button className="bg-yellow-300 px-4 py-2 rounded-full">
             Start my Page
           </button>

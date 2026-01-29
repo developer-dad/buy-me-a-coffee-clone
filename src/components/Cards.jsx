@@ -4,6 +4,10 @@ import membershipBanner from "../assets/membership_banner.png";
 import PostBanner from "../assets/posts_banner.png";
 import ShopBanner from "../assets/shops_banner.png";
 import SuppostBanner from "../assets/suppost_banner.png";
+import membershipBannerPc from "../assets/membership_banner_pc.png"
+import postsBannerPc from "../assets/posts_banner_pc.png"
+import shopBannerPc from "../assets/shop_banner_pc.png"
+import supportBannerPc from "../assets/support_banner_pc.png"
 
 function Cards() {
   const list = [
@@ -11,25 +15,29 @@ function Cards() {
       card: "SUPPORT",
       heading: "Give your audience an easy way to say thanks.",
       text: "Buy Me a Coffee makes supporting fun and easy. In just a couple of taps, your fans can make the payment (buy you a coffee)   and leave a message.",
-      image: SuppostBanner,
+      mobileImage: SuppostBanner,
+      pcImage: supportBannerPc
     },
     {
       card: "MEMBERSHIP",
       heading: "Start a membership for your biggest fans.",
       text: "Earn a recurring income by accepting monthly or yearly subscriptions. Share exclusive content, or just give them a way to support your work on an ongoing basis.",
-      image: membershipBanner,
+      mobileImage: membershipBanner,
+      pcImage: membershipBannerPc
     },
     {
       card: "SHOP",
       heading: "Introducing Shop, the creative way to sell.",
       text: "The things you’d like to sell probably do not belong in a Shopify store. Shop is designed from the ground up with creators in mind. Whether it’s a 1-1 Zoom call, art commissions, or an ebook, Shop is for you.",
-      image: ShopBanner,
+      mobileImage: ShopBanner,
+      pcImage: shopBannerPc
     },
     {
       card: "POST, AUDIO & EMAIL",
       heading: "Publish your best work",
       text: "Buy Me a Coffee makes it easy to publish free and exclusive content. Try different formats such as audio, and make it members-only to drive more memberships.",
-      image: PostBanner,
+      mobileImage: PostBanner,
+      pcImage: postsBannerPc
     },
   ];
   const cardVariant = {
@@ -59,29 +67,34 @@ function Cards() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="bg-white mx-5 mt-10 rounded-3xl px-4 mb-5 pb-4"
+          className="bg-white mx-5 mt-10 rounded-3xl px-4 mb-5 pb-4 md:mx-44 md:rounded-4xl md:p-8 md:px-32 md:mt-0"
         >
           <motion.p
             variants={itemVariant}
-            className="text-gray-500 font-bold text-sm tracking-widest pt-5"
+            className="text-gray-500 font-bold text-sm tracking-widest pt-5 md:text-center md:text-xl"
           >
             {item.card}
           </motion.p>
 
-          <motion.p variants={itemVariant} className="font-bold text-3xl mt-2">
+          <motion.p variants={itemVariant} className="font-bold text-3xl mt-2 md:text-7xl md:text-center">
             {item.heading}
           </motion.p>
 
-          <motion.p variants={itemVariant} className="mt-2 text-[18px]">
+          <motion.p variants={itemVariant} className="mt-2 text-[18px] md:text-2xl md:text-center md:mt-10">
             {item.text}
           </motion.p>
 
-          <motion.img
-            variants={itemVariant}
-            src={item.image}
-            alt={item.card}
-            className="mt-4"
-          />
+          <picture>
+            <source
+              srcSet={item.pcImage}
+              media="(min-width: 768px)"
+            />
+            <img
+              src={item.mobileImage}
+              alt={item.card}
+              className="mt-4"
+            />
+          </picture>
         </motion.div>
       ))}
     </div>

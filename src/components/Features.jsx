@@ -57,16 +57,17 @@ function Features() {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
-      className="bg-white mx-5 mt-10 rounded-3xl px-5 mb-5 py-5"
+      className="bg-white mx-5 mt-10 rounded-3xl p-5 mb-5 md:mx-36 md:p-24"
     >
-      <p className="font-bold text-3xl">
+      <p className="font-bold text-3xl md:text-6xl md:text-center md:leading-18">
         Make 20% or more, <br />
         <span className="text-[#717171]">compared to other platforms.</span>
       </p>
+      <div className="md:grid md:grid-cols-3 md:gap-x-6">
       {list.map((item, index) => {
         const Icon = item.logo;
         return (
-          <div key={index} className="mt-9">
+          <div key={index} className="mt-9 md:mt-16">
             <div>
               <Icon size={item.size} />
             </div>
@@ -75,6 +76,7 @@ function Features() {
           </div>
         );
       })}
+      </div>
     </motion.div>
   );
 }

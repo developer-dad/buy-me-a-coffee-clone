@@ -39,24 +39,25 @@ function CheckList() {
   };
 
   return (
-    <motion.div
+    <motion.div 
       variants={cardVariant}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
-      className="my-12 flex justify-center items-start flex-col mx-7"
+      className="my-12 flex justify-center items-start flex-col mx-7 md:mx-60 md:mt-30 md:items-center md:my-36"
     >
-      <p className="font-bold text-3xl ">
+      <p className="font-bold text-3xl md:text-7xl md:leading-20 md:text-center">
         Designed for creators, <br />
         <span className="text-[#717171]">not for businesses.</span>
       </p>
+      <div className="md:grid md:grid-cols-2 md:gap-12 md:mt-16" >
       {list.map((check, index) => {
         return (
           <div key={index} className="mt-7 flex items-start w-full gap-4">
             <div>
-              <FaRegCheckCircle size={25} color="#7E7E7D" />
+              <FaRegCheckCircle color="#222" className="size-7 md:size-10" />
             </div>
-            <p className="text-[#7E7E7D] text-[20px]">
+            <p className="text-[#7E7E7D] text-[20px] md:text-2xl">
               {check.text}
               <span className="text-black font-bold">{check.span}</span>
               {check.after}
@@ -64,6 +65,7 @@ function CheckList() {
           </div>
         );
       })}
+      </div>
     </motion.div>
   );
 }
