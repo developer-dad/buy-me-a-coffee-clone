@@ -54,15 +54,6 @@ function JulietCoffee() {
                 </div>
             </div>
         </div>
-        {/* <p className='relative -top-80 right-7 bg-white w-fit p-1.5 rounded-full text-2xl border border-gray-200 shadow-2xl'>
-            💯
-        </p>
-        <p className='relative -top-72 right-12 bg-white w-fit p-1.5 rounded-full text-2xl border border-gray-200 shadow-2xl'>
-            ❤️
-        </p>
-        <p className='relative -top-72 right-6 bg-white w-fit p-0.5 rounded-full text-2xl border border-gray-200 shadow-2xl'>
-            👋
-        </p> */}
     </div>
   )
 }

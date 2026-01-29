@@ -18,4 +18,4 @@ function SupportCard() {
   )
 }
 
-export default SupportCard
+export default SupportCard 

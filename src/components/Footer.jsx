@@ -9,6 +9,16 @@ import { FaAndroid } from "react-icons/fa";
 import { IoIosArrowUp } from "react-icons/io";
 
 function Footer() {
+  const resourceDropdown = [
+    "Feature Request",
+    "Buttons",
+    "QR Code",
+    "Stream Alerts",
+    "ko-Fi Comparision",
+    "Patreon Comparision",
+    "Security Policies",
+  ];
+
   const [openApp, setopenApp] = useState(false);
   const [openRes, setopenRes] = useState(false);
 
@@ -23,7 +33,7 @@ function Footer() {
   };
 
   return (
-    <div className="mx-3 my-7">
+    <div className="mx-6 my-7">
       <div className="flex justify-between font-bold">
         <p>About</p>
         <p>Help Center</p>
@@ -31,7 +41,10 @@ function Footer() {
         <div className="relative cursor-pointer" onClick={toggleApps}>
           <div className="flex items-center gap-1">
             <p className="hover:text-gray-600">Apps</p>
-            <IoIosArrowUp color="#717171" className={`transition-transform duration-300 ${openApp ? "rotate-180" : "rotate-0"}`}/>
+            <IoIosArrowUp
+              color="#717171"
+              className={`transition-transform duration-300 ${openApp ? "rotate-180" : "rotate-0"}`}
+            />
           </div>
           <div
             className={`absolute font-medium bg-white px-3 py-2.5 -top-32 -left-8 rounded-3xl shadow-2xl border-gray-200 border ${
@@ -55,34 +68,24 @@ function Footer() {
         >
           <div className="flex items-center gap-1">
             <p className="hover:text-gray-600">Resources</p>
-            <IoIosArrowUp color="#717171" className={`transition-transform duration-300 ${openRes ? "rotate-180" : "rotate-0"}`}/>
+            <IoIosArrowUp
+              color="#717171"
+              className={`transition-transform duration-300 ${openRes ? "rotate-180" : "rotate-0"}`}
+            />
           </div>
           <div
             className={`absolute font-medium bg-white px-3 py-2.5 -top-86 w-60 -left-40 rounded-3xl shadow-2xl border-gray-200 border ${
               openRes ? "block" : "hidden"
             }`}
           >
-            <div className="flex justify-start items-center gap-1.5 px-5 py-2 rounded-2xl hover:bg-gray-200 ">
-              <p className="text-[18px]">Feature Request</p>
-            </div>
-            <div className="flex justify-start items-center gap-1.5 px-5 py-2 rounded-2xl hover:bg-gray-200 ">
-              <p className="text-[18px]">Buttons</p>
-            </div>
-            <div className="flex justify-start items-center gap-1.5 px-5 py-2 rounded-2xl hover:bg-gray-200 ">
-              <p className="text-[18px]">QR Code</p>
-            </div>
-            <div className="flex justify-start items-center gap-1.5 px-5 py-2 rounded-2xl hover:bg-gray-200 ">
-              <p className="text-[18px]">Stream Alerts</p>
-            </div>
-            <div className="flex justify-start items-center gap-1.5 px-5 py-2 rounded-2xl hover:bg-gray-200 ">
-              <p className="text-[18px]">ko-Fi Comparision</p>
-            </div>
-            <div className="flex justify-start items-center gap-1.5 px-5 py-2 rounded-2xl hover:bg-gray-200 ">
-              <p className="text-[18px]">Patreon Comparision</p>
-            </div>
-            <div className="flex justify-start items-center gap-1.5 px-5 py-2 rounded-2xl hover:bg-gray-200 ">
-              <p className="text-[18px]">Security Policies</p>
-            </div>
+            {resourceDropdown.map((item, index) => (
+              <div
+                key={index}
+                className="flex justify-start items-center gap-1.5 px-5 py-2 rounded-2xl hover:bg-gray-200 "
+              >
+                <p className="text-[18px]">{item}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
